@@ -8,6 +8,8 @@
 
 支持 Claude Code、OpenCode、Claude Desktop 等任何 MCP 客户端。
 
+**[项目主页](https://mjshao.fun/mcp-server-wechat-mp/)** · **[GitHub](https://github.com/nxxxsooo/mcp-server-wechat-mp)**
+
 ## 它能做什么
 
 | 工具 | 功能 |
