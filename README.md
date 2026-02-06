@@ -73,6 +73,47 @@ npm run build
 
 配置完重启你的 AI 工具，就能用了。
 
+## 🤖 让 AI 帮你装
+
+把下面这段话复制粘贴给你的 AI（Claude Code、OpenCode 等），它会自动帮你完成安装和配置：
+
+```
+帮我安装和配置 mcp-server-wechat-mp。
+
+仓库地址：https://github.com/nxxxsooo/mcp-server-wechat-mp
+
+步骤：
+1. 把仓库 clone 到本地，运行 npm install && npm run build
+2. 在我的 MCP 配置文件里添加 wechat-mp 服务器配置
+3. 我会在你问我的时候提供 AppID 和 AppSecret
+
+需要我提供的信息：
+- 微信公众号 AppID（在 mp.weixin.qq.com → 设置与开发 → 基本配置）
+- 微信公众号 AppSecret（同上，点「重置」获取）
+- 我的公网 IP 需要加到公众号 IP 白名单（帮我用 curl -s ifconfig.me 查一下）
+
+配置文件位置：
+- OpenCode: ~/.config/opencode/mcp.json
+- Claude Code: ~/.claude/mcp.json
+- Claude Desktop: ~/Library/Application Support/Claude/claude_desktop_config.json
+
+配置格式：
+{
+  "mcpServers": {
+    "wechat-mp": {
+      "command": "node",
+      "args": ["<克隆路径>/dist/index.js"],
+      "env": {
+        "WECHAT_APP_ID": "<AppID>",
+        "WECHAT_APP_SECRET": "<AppSecret>"
+      }
+    }
+  }
+}
+
+注意：args 里必须用绝对路径。配置完帮我重启 AI 工具验证连接。
+```
+
 ## 用法示例
 
 跟 AI 说：
