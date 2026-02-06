@@ -102,6 +102,20 @@ export class WeChatClient {
     return response.data.media_id; // Draft ID (media_id)
   }
 
+  // Delete Draft
+  // https://developers.weixin.qq.com/doc/offiaccount/Draft_Box/Delete_draft.html
+  async deleteDraft(mediaId: string): Promise<void> {
+    const token = await this.getAccessToken();
+    const response = await this.client.post('/draft/delete',
+      { media_id: mediaId },
+      { params: { access_token: token } }
+    );
+
+    if (response.data.errcode) {
+      throw new Error(`Failed to delete draft: ${response.data.errmsg}`);
+    }
+  }
+
   // Publish Draft
   // https://developers.weixin.qq.com/doc/offiaccount/Publish/Publish.html
   async publishDraft(mediaId: string): Promise<string> {

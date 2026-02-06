@@ -91,6 +91,17 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         required: ['media_id'],
       },
     },
+    {
+      name: 'delete_draft',
+      description: 'Delete a draft from the Draft Box.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          media_id: { type: 'string', description: 'Draft Media ID to delete' },
+        },
+        required: ['media_id'],
+      },
+    },
   ],
 }));
 
@@ -136,6 +147,14 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const publishId = await client.publishDraft(media_id);
         return {
           content: [{ type: 'text', text: JSON.stringify({ publish_id: publishId }) }],
+        };
+      }
+
+      case 'delete_draft': {
+        const { media_id } = request.params.arguments as { media_id: string };
+        await client.deleteDraft(media_id);
+        return {
+          content: [{ type: 'text', text: JSON.stringify({ deleted: true, media_id }) }],
         };
       }
 
