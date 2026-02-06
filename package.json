@@ -2,7 +2,6 @@
   "name": "mcp-server-wechat-mp",
   "version": "1.0.0",
   "description": "MCP Server for WeChat Official Account",
-  "type": "module",
   "bin": {
     "mcp-server-wechat-mp": "./dist/index.js"
   },
