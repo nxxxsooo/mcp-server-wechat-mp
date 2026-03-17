@@ -1,5 +1,9 @@
 # mcp-server-wechat-mp
 
+> ⚠️ **This project has been archived.** The functionality has been migrated to a lighter-weight OpenCode skill: **[wechat-mp-publisher](https://github.com/nxxxsooo/wechat-mp-publisher)** — same capabilities, no MCP server process needed.
+
+---
+
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![MCP](https://img.shields.io/badge/MCP-1.26-green)](https://modelcontextprotocol.io/)
 [![License: ISC](https://img.shields.io/badge/License-ISC-yellow)](https://opensource.org/licenses/ISC)
